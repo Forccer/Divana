@@ -1,0 +1,15 @@
+{
+    "name": "divanabot-1.0.0",
+    "version": "1.0.0",
+    "description": "Just an awesome fucking bot",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Divana",
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^11.2.1"
+    }
+}
