@@ -13,7 +13,6 @@ client.login(config.token);
 
 //declare everything here
     //set the prefix here
-    let prefix = "config.prefix";
 
 
 //check bot status
