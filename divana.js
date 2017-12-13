@@ -25,13 +25,13 @@ client.on("ready", () => {
 //read a user message
 client.on('message', msg => {
     msghandler(msg, '!', client)
-    /*
+    
     if(command ==="meme"){
         giphy.random('meme', function (err, res) {
             message.channel.send(res["data"].url);
         });
     }
-
+/*
     if(command === "ting"){
                 giphy.random('mans not hot', function (err, res) {
             message.channel.send(res["data"].url);
