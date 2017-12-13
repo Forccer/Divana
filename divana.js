@@ -1,10 +1,15 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const handler = require('./handlers/msghandler')
+const msghandler = handler.msghandler
+exports.client = client;
+exports.prefix = 'div' //s
+/*
 const config = require("./config.json");
 const fs = require("fs");
 var giphy = require('giphy-api')();
 client.login(config.token);
-
+*/
 
 //declare everything here
     //set the prefix here
@@ -13,22 +18,14 @@ client.login(config.token);
 
 //check bot status
     //print that the bot has started
-    client.on("ready", () => {
-        console.log("Bot successfully started!");
-    });
+client.on("ready", () => {
+    console.log("Bot successfully started!");
+});
 
 //read a user message
-client.on('message', message => {
-    if (!message.content.startsWith(config.prefix)) return;
-    if(message.channel.type === 'dm') return;
-    let command = message.content.split(" ")[0];
-    command = command.slice(config.prefix.length);
-    let args = message.content.split(" ").splice(1);
-
-    if(command === "ping"){
-        message.channel.send("pong")
-    }
-
+client.on('message', msg => {
+    msghandler(msg, '!', client)
+    /*
     if(command ==="meme"){
         giphy.random('meme', function (err, res) {
             message.channel.send(res["data"].url);
@@ -39,6 +36,7 @@ client.on('message', message => {
                 giphy.random('mans not hot', function (err, res) {
             message.channel.send(res["data"].url);
         });
-    }
+    } */
 
 });
+client.login('MzkwNTAxMDI1ODI5NzQ4NzM2.DRLB8A.bJfpUbfP9yxqPTGxTARd-VBrTRI')
