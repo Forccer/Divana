@@ -1,9 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const handler = require('./handlers/msghandler')
-const msghandler = handler.msghandler
+const msgprehandler = require('./handlers/msghandler')
+const msghandler = msgprehandler.msghandler
+const guiildmemberaddprehandler = require('./handlers/memadd')
+const gmemadd = guiildmemberaddprehandler.memadd
+const prefix = '#'
 exports.client = client;
-exports.prefix = 'div' //s
+exports.prefix = '#' //s
 /*
 const config = require("./config.json");
 const fs = require("fs");
@@ -32,6 +35,8 @@ client.on("ready", () => {
 
 //Welcome Message
 client.on("guildMemberAdd", member => {
+  gmemadd(member, client)
+  /*
     const channel = member.guild.channels.find('name', 'general')
     if(!channel) return
     channel.send(`Welcome to server, ${member}. Please read #rules and dm DMforSupport for help`)
@@ -43,12 +48,13 @@ client.on("guildMemberAdd", member => {
       guild.defaultChannel.send("Welcome, " + userlist + " to the server. \n Please read #rules and dm DmforSupport for help")
       newUsers.clear
     }
-})
+    */
+});
 
 //read a user message
 client.on('message', msg => {
-    msghandler(msg, '!', client)
-    
+    msghandler(msg, prefix, client)
+
  /*   if(command ==="meme"){
         giphy.random('meme', function (err, res) {
             message.channel.send(res["data"].url);
