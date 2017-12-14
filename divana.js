@@ -1,3 +1,10 @@
+/*
+====================
+This is the main bot file
+[D] dathappysheep#6683 #6883
+[E] m.rumsey@hotmail.com
+====================
+*/
 const Discord = require("discord.js");
 const client = new Discord.Client();
 

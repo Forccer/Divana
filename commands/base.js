@@ -1,3 +1,10 @@
+/*
+====================
+This file recieves and responds to base grade messages.
+[D] dathappysheep#6683 #6883
+[E] m.rumsey@hotmail.com
+====================
+*/
 exports.ping = (msg, client) => {
   msg.reply("pong!")
 };

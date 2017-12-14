@@ -1,3 +1,10 @@
+/*
+====================
+This responds to people joining the guild the bot is in.
+[D] dathappysheep#6683 #6883
+[E] m.rumsey@hotmail.com
+====================
+*/
 exports.memadd = (member, client) => {
   const channel = member.guild.channels.find('name', 'general')
   if(!channel) return;
