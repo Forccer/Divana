@@ -29,3 +29,15 @@ exports.trending = () => {
    return res["data"].url
   });
 }
+exports.search = (searchterm, msg) => {
+  if (typeof searchterm !== 'string') {
+    msg.reply('Not a string!')
+    return;
+  }
+  giphy.search({
+    q: searchterm
+    limit: 1
+  }, function (err, res) {
+      return res["data"].url
+  });
+}
