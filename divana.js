@@ -1,12 +1,11 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+
 const msgprehandler = require('./handlers/msghandler')
 const msghandler = msgprehandler.msghandler
 const guiildmemberaddprehandler = require('./handlers/memadd')
 const gmemadd = guiildmemberaddprehandler.memadd
 const prefix = '#'
-exports.client = client;
-exports.prefix = '#' //s
 /*
 const config = require("./config.json");
 const fs = require("fs");
